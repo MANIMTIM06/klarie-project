@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the 12 Principles of Multimedia Design and test your understanding with a shuffled quiz.">
+  <meta name="theme-color" content="#800000">
+  <title>12 Principles of Multimedia Design | MMS 102 - TMA 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Spectral:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design.css">
+</head>
+<body>
+  <main class="home-screen" id="home-screen">
+    <header class="site-header" aria-label="Course and author">
+      <p class="eyebrow">MMS 102 - TMA 3</p>
+      <p class="author">Laluz, Klarie Jane M.</p>
+    </header>
+
+    <section class="home-content" aria-labelledby="page-title">
+      <h1 id="page-title">12 Principles of Multimedia Design</h1>
+      <p class="home-intro">Explore the ideas that make learning experiences clearer and more engaging.</p>
+      <nav class="filter-bar" aria-label="Filter principles by learning goal">
+        <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All 12</button>
+        <button class="filter-button" type="button" data-filter="extraneous" aria-pressed="false">Reduce extraneous processing</button>
+        <button class="filter-button" type="button" data-filter="essential" aria-pressed="false">Manage essential processing</button>
+        <button class="filter-button" type="button" data-filter="generative" aria-pressed="false">Foster generative processing</button>
+      </nav>
+      <p class="result-count" id="result-count" aria-live="polite">Showing 12 principles</p>
+      <div class="card-grid" id="principle-grid" aria-label="Choose a multimedia design principle"></div>
+    </section>
+
+    <section class="challenge" aria-labelledby="challenge-title">
+      <h2 id="challenge-title">Ready for a Challenge?</h2>
+      <button class="pill-button quiz-launch" id="quiz-launch" type="button">Take the quiz!</button>
+    </section>
+
+    <footer class="site-footer">
+      <a class="badge" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">
+        <img src="../image/by-nc-nd.png" alt="Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 license">
+      </a>
+      <p>2026. All Rights Reserved.</p>
+      <p>Created by: Klarie Jane Laluz, MMS 102</p>
+      <p class="footer-citation">Mayer, R. E. (2009). <em>Multimedia learning</em> (2nd ed.). Cambridge University Press.</p>
+    </footer>
+  </main>
+
+  <div class="modal-backdrop" id="principle-backdrop" hidden>
+    <section class="principle-modal" id="principle-modal" role="dialog" aria-modal="true" aria-labelledby="principle-title" aria-describedby="principle-meaning" tabindex="-1">
+      <button class="modal-close" id="principle-close" type="button" aria-label="Close principle and return to home">×</button>
+      <h2 id="principle-title"></h2>
+      <div class="principle-content">
+        <p class="principle-meaning" id="principle-meaning"></p>
+        <div class="video-column">
+          <div class="video-frame" id="video-frame" aria-label="Principle video preview"></div>
+        </div>
+      </div>
+      <nav class="modal-navigation" aria-label="Principle navigation">
+        <button class="text-link back-link" id="principle-back" type="button">← Go Back</button>
+        <button class="text-link next-link" id="principle-next" type="button"></button>
+      </nav>
+    </section>
+  </div>
+
+  <div class="modal-backdrop quiz-backdrop" id="quiz-backdrop" hidden>
+    <section class="quiz-modal" id="quiz-modal" role="dialog" aria-modal="true" aria-labelledby="quiz-heading" tabindex="-1">
+      <button class="modal-close" id="quiz-close" type="button" aria-label="Close quiz and return to home">×</button>
+      <div class="quiz-header">
+        <p class="eyebrow">12 Principles of Multimedia Design</p>
+        <h2 id="quiz-heading">Knowledge Check</h2>
+        <div class="quiz-status" id="quiz-status" aria-live="polite"></div>
+      </div>
+      <div class="quiz-card-scene">
+        <article class="quiz-card" id="quiz-card" aria-live="polite">
+          <div class="quiz-card-inner" id="quiz-card-inner">
+            <div class="quiz-face quiz-front" id="quiz-front">
+              <p class="question-text" id="question-text"></p>
+              <div class="quiz-options" id="quiz-options" role="group" aria-label="Answer options"></div>
+            </div>
+            <div class="quiz-face quiz-back" id="quiz-answer" aria-hidden="true">
+              <p class="answer-result" id="answer-result"></p>
+              <p class="correct-answer" id="correct-answer"></p>
+              <p class="answer-explanation" id="answer-explanation"></p>
+              <button class="pill-button next-question" id="next-question" type="button">Next</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <section class="quiz-results" id="quiz-results" aria-live="polite" hidden>
+        <p class="eyebrow">Quiz complete</p>
+        <h3 id="final-score"></h3>
+        <p id="score-message"></p>
+        <div class="result-actions">
+          <button class="pill-button" id="retry-quiz" type="button">Shuffle &amp; Try Again</button>
+          <button class="text-link" id="quiz-home" type="button">Back to Home</button>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <script src="../backend/function.js" defer></script>
+</body>
+</html>
